@@ -1,8 +1,10 @@
-body {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Red Hat Display", sans-serif;
+  font-family: "Red Hat Display", sans-serif !important;
 }
 
 :root {
@@ -10,15 +12,28 @@ body {
   --white2: #efeff1;
   --lightgreen1: #aeffc9;
   --lightgreen2: #b6ffce;
-  --offgray:#B7B9BE
+  --offgray: #b7b9be;
   --lightgray: #666971;
   --lightblack1: #44464b;
   --lightblack2: #222326;
-
   --lightpurpule: #b4c4ff;
-  
-  --bg-golden:linear-gradient(69.78deg, #FCD34D -17.63%, #D97706 -0.58%, #D97706 0.09%, #FCD34D 41.79%, #D97706 80.18%, #D97706 81.01%, #FCD34D 95.77%);
+  --heading-text: rgba(183, 185, 190, 1);
+  --input-text: rgba(239, 239, 241, 1);
+  --input-heading-text: rgba(102, 105, 113, 1);
+  --suggestion-box-text: rgba(223, 224, 226, 1);
+
+  --bg-golden: linear-gradient(
+    69.78deg,
+    #fcd34d -17.63%,
+    #d97706 -0.58%,
+    #d97706 0.09%,
+    #fcd34d 41.79%,
+    #d97706 80.18%,
+    #d97706 81.01%,
+    #fcd34d 95.77%
+  );
   --bg-black: #080909;
+  --bg-black1: rgba(8, 9, 9, 1);
 }
 
 #mainContainer {
@@ -35,7 +50,7 @@ body {
   padding: 0 5vw;
 }
 
-.navbar .navlinks{
+.navbar .navlinks {
   color: var(--white1);
   list-style: none;
   display: inline-flex;
@@ -43,6 +58,135 @@ body {
   gap: 3vw;
   font-weight: 700;
 }
-.navbar .navlinks > .active-link{
+.navbar .navlinks > .active-link {
   color: var(--lightgreen1);
+}
+
+#createGoalContainer {
+  padding: 1rem 0 2rem;
+  /* max-height: 873px; */
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+#createGoalBox {
+  flex: 1;
+  max-width: 624px;
+  padding: 2rem 1rem;
+  background-color: var(--bg-black1);
+  z-index: 1;
+}
+
+#createGoalBox #suggestionContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+#createGoalBox #suggestionContainer .suggestion-box {
+  padding: 8px;
+  background: rgba(68, 70, 75, 1);
+  border: 1px solid rgba(175, 177, 183, 1);
+  color: var(--suggestion-box-text);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+#createGoalBox .MuiFormControl-root {
+  width: 100%;
+}
+#createGoalBox .MuiFormLabel-root.MuiInputLabel-root {
+  color: var(--input-heading-text);
+}
+#createGoalBox .MuiInputBase-input.MuiOutlinedInput-input {
+  outline: 0;
+  color: var(--input-text);
+  padding: 8px 16px;
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+#createGoalBox .MuiOutlinedInput-notchedOutline {
+  border: 1px solid rgba(102, 105, 113, 1);
+  border-radius: unset;
+}
+
+#createGoalBox .css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root {
+  transform: translate(14px, 14px) scale(1);
+}
+
+#createGoalBox
+  :where(.css-dev-only-do-not-override-1r287do).ant-carousel
+  .slick-dots {
+  display: none !important;
+}
+#createGoalBox
+  :where(.css-dev-only-do-not-override-1r287do).ant-carousel-vertical
+  .slick-next {
+  inset-block-end: -5px;
+}
+#createGoalBox
+  :where(.css-dev-only-do-not-override-1r287do).ant-carousel-vertical
+  .slick-prev {
+  inset-block-start: -5px;
+}
+
+#createGoalContainer #userPic {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#createGoalContainer #userPic {
+  flex: 1;
+}
+
+#createGoalContainer #userPic > img {
+  width: 100%;
+  max-width: 512px;
+}
+
+#createGoalBox #userPicMobile {
+  display: none;
+}
+
+.footer {
+  background-color: var(--bg-black);
+  color: var(--white2);
+  padding: 2.75rem 0;
+  text-align: center;
+}
+
+.footer #footerLinks {
+  text-align: left;
+  font-size: 1.25rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 60px;
+  row-gap: 26px;
+  flex-wrap: wrap;
+  max-width: 208px;
+  justify-content: center;
+  margin: 0 auto;
+  white-space: nowrap;
+  margin-top: 85px;
+  margin-bottom: 56px;
+}
+
+@media screen and (max-width: 850px) {
+  #createGoalContainer #userPic {
+    display: none;
+  }
+  #createGoalBox #userPicMobile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #createGoalContainer {
+    justify-content: center;
+  }
+  #suggestionContainer > .suggestion-box:last-child {
+    display: none !important;
+  }
 }

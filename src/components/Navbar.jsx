@@ -2,7 +2,7 @@ import React from "react";
 import logo from "../assets/images/logo.png";
 import { Box, Divider, useMediaQuery } from "@mui/material";
 
-import CommonuButton from "./Button";
+import CommonuButton from "./CommonuButton";
 import Menu from "./Menu";
 
 export default function Navbar() {
