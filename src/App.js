@@ -1,7 +1,11 @@
-import "./App.css";
+import AppLayout from "./pages/AppLayout";
 
 function App() {
-  return <div className="App">Goals calculator</div>;
+  return (
+    <main id="mainContainer">
+      <AppLayout />
+    </main>
+  );
 }
 
 export default App;

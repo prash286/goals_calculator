@@ -4,3 +4,45 @@ body {
   box-sizing: border-box;
   font-family: "Red Hat Display", sans-serif;
 }
+
+:root {
+  --white1: #f8f9ff;
+  --white2: #efeff1;
+  --lightgreen1: #aeffc9;
+  --lightgreen2: #b6ffce;
+  --offgray:#B7B9BE
+  --lightgray: #666971;
+  --lightblack1: #44464b;
+  --lightblack2: #222326;
+
+  --lightpurpule: #b4c4ff;
+  
+  --bg-golden:linear-gradient(69.78deg, #FCD34D -17.63%, #D97706 -0.58%, #D97706 0.09%, #FCD34D 41.79%, #D97706 80.18%, #D97706 81.01%, #FCD34D 95.77%);
+  --bg-black: #080909;
+}
+
+#mainContainer {
+  max-width: 1512px;
+  margin: 0 auto;
+}
+
+.navbar {
+  background-color: var(--bg-black);
+  padding: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5vw;
+}
+
+.navbar .navlinks{
+  color: var(--white1);
+  list-style: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 3vw;
+  font-weight: 700;
+}
+.navbar .navlinks > .active-link{
+  color: var(--lightgreen1);
+}
