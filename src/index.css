@@ -186,6 +186,10 @@
   #suggestionContainer > .suggestion-box:last-child {
     display: none !important;
   }
+
+  #createGoalContainer .MuiFormLabel-root {
+    top: -3px;
+  }
 }
 
 .goalRadioLabel {
@@ -293,6 +297,6 @@
   }
 }
 
-.css-1wuw8dw-MuiBreadcrumbs-separator {
+li.MuiBreadcrumbs-separator {
   color: var(--white2);
 }

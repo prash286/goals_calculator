@@ -402,7 +402,15 @@ export default function CreateGoal() {
                 </div>
               </Carousel>
             </Grid>
-            <Grid item xs={6} sx={{ padding: "0px !important" }}>
+            <Grid
+              item
+              xs={6}
+              sx={{
+                padding: "0px !important",
+                display: "flex",
+                justifyContent: "center",
+              }}
+            >
               <Box
                 sx={{
                   color: "var(--lightgreen2)",
@@ -410,6 +418,7 @@ export default function CreateGoal() {
                   flexDirection: "column",
                   gap: "0.5rem",
                   textAlign: "center",
+                  justifyContent: "center",
                 }}
               >
                 <span>Invest</span>
