@@ -1,10 +1,13 @@
+import { GoalCalculationContextProvider } from "./context/goalCalculationContext";
 import AppLayout from "./pages/AppLayout";
 
 function App() {
   return (
-    <main id="mainContainer">
-      <AppLayout />
-    </main>
+    <GoalCalculationContextProvider>
+      <main id="mainContainer">
+        <AppLayout />
+      </main>
+    </GoalCalculationContextProvider>
   );
 }
 
