@@ -4,7 +4,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Red Hat Display", sans-serif !important;
+  font-family: "Red Hat Display" !important;
 }
 
 :root {
@@ -21,6 +21,8 @@
   --input-text: rgba(239, 239, 241, 1);
   --input-heading-text: rgba(102, 105, 113, 1);
   --suggestion-box-text: rgba(223, 224, 226, 1);
+
+  --radio-button-border: #afb1b7;
 
   --bg-golden: linear-gradient(
     69.78deg,
@@ -103,7 +105,7 @@
   outline: 0;
   color: var(--input-text);
   padding: 8px 16px;
-  font-size: 1.5rem;
+  font-size: clamp(1.1875rem, 1.0766rem + 0.4517vw, 1.5rem);
   font-weight: 400;
 }
 
@@ -124,12 +126,12 @@
 #createGoalBox
   :where(.css-dev-only-do-not-override-1r287do).ant-carousel-vertical
   .slick-next {
-  inset-block-end: -5px;
+  inset-block-end: -10px;
 }
 #createGoalBox
   :where(.css-dev-only-do-not-override-1r287do).ant-carousel-vertical
   .slick-prev {
-  inset-block-start: -5px;
+  inset-block-start: -8px;
 }
 
 #createGoalContainer #userPic {
@@ -189,4 +191,114 @@
   #suggestionContainer > .suggestion-box:last-child {
     display: none !important;
   }
+}
+
+.goalRadioLabel {
+  background-color: #222326;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-size: clamp(1.1875rem, 1.0766rem + 0.4517vw, 1.5rem);
+  font-weight: 700;
+  border: 2px solid transparent;
+}
+
+.goalRadioLabel .MuiTypography-root {
+  font-size: clamp(1.1875rem, 1.0766rem + 0.4517vw, 1.5rem);
+  font-weight: 700;
+}
+
+.goalRadioLabel svg.MuiSvgIcon-root {
+  fill: var(--radio-button-border);
+}
+
+.MuiFormGroup-root .goalRadioLabel:last-child .MuiTypography-root {
+  background: var(--bg-golden);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.goalRadioLabel.activeGoal {
+  background: var(--bg-golden);
+  background-clip: text;
+  -webkit-background-clip: text;
+  border-image: var(--bg-golden) 1;
+  border-image-slice: 1;
+}
+
+.goalRadioLabel.activeGoal svg.MuiSvgIcon-root {
+  fill: #fbbf24;
+}
+
+.goalRadioLabel.activeGoal .MuiTypography-root {
+  background: var(--bg-golden);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient {
+  background: var(--bg-golden);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.chart-container canvas {
+  height: 285px !important;
+  margin: 0 auto;
+}
+/* 285 250 200 180*/
+
+#transactionDetailsBox {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  column-gap: 2.5vw;
+  position: relative;
+  z-index: 2;
+  margin-bottom: 2rem;
+}
+
+@media screen and (max-width: 899px) {
+  #transactionDetailsBox {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  #transactionDetailsBox > div:last-child {
+    max-width: 488px;
+    padding: 0 1.5rem 2.5rem;
+    background-color: var(--bg-black);
+  }
+  .chart-container canvas {
+    height: 315px !important;
+    width: 343px !important;
+  }
+}
+@media (min-width: 900px) and (max-width: 950px) {
+  .chart-container canvas {
+    height: 180px !important;
+  }
+}
+@media (min-width: 951px) and (max-width: 1094px) {
+  .chart-container canvas {
+    height: 200px !important;
+  }
+}
+@media (min-width: 1095px) and (max-width: 1250px) {
+  .chart-container canvas {
+    height: 250px !important;
+  }
+}
+@media (min-width: 1250px) and (max-width: 1500px) {
+  .chart-container canvas {
+    height: 285px !important;
+  }
+}
+
+.css-1wuw8dw-MuiBreadcrumbs-separator {
+  color: var(--white2);
 }
