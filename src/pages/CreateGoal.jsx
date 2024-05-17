@@ -274,7 +274,7 @@ export default function CreateGoal() {
       >
         <TextField
           error={error.goalName}
-          helperText="Please enter goal name."
+          helperText={error.goalName ? "Please enter goal name." : ""}
           label="Goal name"
           autoComplete="off"
           name="goalName"
@@ -324,7 +324,7 @@ export default function CreateGoal() {
           inputRef={goalAmtRef}
           onChange={handleChange}
           onBlur={handleBlur}
-          helperText="Please enter valid amount"
+          helperText={error.goalAmount ? "Please enter valid amount" : ""}
         />
 
         <Box

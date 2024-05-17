@@ -66,7 +66,6 @@
 
 #createGoalContainer {
   padding: 1rem 0 2rem;
-  /* max-height: 873px; */
   height: 100%;
   display: flex;
   justify-content: space-between;
@@ -118,19 +117,15 @@
   transform: translate(14px, 14px) scale(1);
 }
 
-#createGoalBox
-  :where(.css-dev-only-do-not-override-1r287do).ant-carousel
-  .slick-dots {
+#createGoalBox ul.slick-dots.slick-dots-left {
   display: none !important;
 }
-#createGoalBox
-  :where(.css-dev-only-do-not-override-1r287do).ant-carousel-vertical
-  .slick-next {
+
+#createGoalBox button.slick-arrow.slick-next {
   inset-block-end: -10px;
 }
-#createGoalBox
-  :where(.css-dev-only-do-not-override-1r287do).ant-carousel-vertical
-  .slick-prev {
+
+#createGoalBox button.slick-arrow.slick-prev {
   inset-block-start: -8px;
 }
 
@@ -251,7 +246,6 @@
   height: 285px !important;
   margin: 0 auto;
 }
-/* 285 250 200 180*/
 
 #transactionDetailsBox {
   display: flex;
