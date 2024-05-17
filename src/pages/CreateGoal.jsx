@@ -102,7 +102,7 @@ export default function CreateGoal() {
     }
 
     if (name === "goalAmount") {
-      if (val) {
+      if (val && /^\d+$/.test(val)) {
         setError((errData) => ({ ...errData, goalAmount: false }));
       } else {
         setError((errData) => ({ ...errData, goalAmount: true }));
@@ -120,10 +120,11 @@ export default function CreateGoal() {
 
   const handleBlur = () => {
     const goalAmtValue = goalAmtRef.current.value;
+    if (/^\d+$/.test(goalAmtValue)) {
+      goalAmtRef.current.value = formatAmount(goalAmtValue, 0);
 
-    goalAmtRef.current.value = formatAmount(goalAmtValue, 0);
-
-    calculateInvestPerMonthValue(formData.goalTimeline);
+      calculateInvestPerMonthValue(formData.goalTimeline);
+    }
   };
 
   const calculateInvestPerMonthValue = (month) => {
@@ -180,7 +181,12 @@ export default function CreateGoal() {
   }
 
   function validateData() {
-    if (formData.goalName && formData.goalAmount) {
+    if (
+      formData.goalName &&
+      formData.goalAmount &&
+      !error.goalAmount &&
+      !error.goalName
+    ) {
       setError((errData) => ({
         ...errData,
         goalName: false,
@@ -194,7 +200,7 @@ export default function CreateGoal() {
       } else {
         setError((errData) => ({ ...errData, goalName: false }));
       }
-      if (!formData.goalAmount) {
+      if (!formData.goalAmount || error.goalAmount) {
         setError((errData) => ({ ...errData, goalAmount: true }));
       } else {
         setError((errData) => ({ ...errData, goalAmount: false }));
